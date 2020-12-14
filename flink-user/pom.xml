@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>flink</artifactId>
+		<groupId>com.zoush</groupId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>flink-user</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0</version>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.zoush</groupId>
+			<artifactId>flink-common</artifactId>
+			<version>1.0</version>
+			<scope>${jar.dpd.scope}</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.zoush</groupId>
+			<artifactId>flink-utils</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>com.zoush</groupId>
+					<artifactId>flink-common</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- Scala编译插件 -->
+			<plugin>
+				<groupId>net.alchim31.maven</groupId>
+				<artifactId>scala-maven-plugin</artifactId>
+			</plugin>
+			<!-- Java编译插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+			<!-- 打包插件，该插件会打全部依赖包 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
