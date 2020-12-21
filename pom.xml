@@ -30,7 +30,7 @@
 		<flink-utils.version>1.0</flink-utils.version> <!-- 工具包 -->
 		<flink.version>1.10.1</flink.version>
 		<hadoop.version>2.6.0</hadoop.version>
-		<slf4j.version>1.7.7</slf4j.version>
+		<slf4j.version>1.7.15</slf4j.version>
 		<log4j.version>1.2.17</log4j.version>
 		<mysql.version>5.1.47</mysql.version>
 		<fastjson.version>1.2.47</fastjson.version>
@@ -60,50 +60,51 @@
 
 	<!-- 定义公共依赖jar包，maven会传递到子模块中 -->
 	<dependencies>
-		<!-- mysql -->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>${mysql.version}</version>
-		</dependency>
-
-		<!-- fastjson -->
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>fastjson</artifactId>
-			<version>${fastjson.version}</version>
-		</dependency>
-
-		<!-- commons-lang -->
-		<dependency>
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
-			<version>${commons-lang.version}</version>
-		</dependency>
-
-		<!-- jackson -->
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
-			<version>${jackson.version}</version>
-		</dependency>
-
-		<!-- lombok -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>${lombok.version}</version>
-		</dependency>
 	</dependencies>
 
-	<!-- 定义公共依赖jar包，maven不会依赖到子模块中，需要手工在子模块中引入，不需要指定版本号，版本号统一在父项目中管理 -->
+	<!-- 定义公共依赖jar包，maven不会传递到子模块中，需要手工在子模块中引入，不需要指定版本号，版本号统一在父项目中管理 -->
 	<!-- 此处只是声明依赖，不实现引入，如果在子模块中单独指定版本号，则不会使用父项目声明的依赖。子模块引入时可单独指定scope -->
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>com.zoush</groupId>
-				<artifactId>flink-utils</artifactId>
+				<artifactId>flink-utils</artifactId> <!-- 工具模块 -->
 				<version>${flink-utils.version}</version>
+			</dependency>
+
+			<!-- mysql -->
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql.version}</version>
+			</dependency>
+
+			<!-- fastjson -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${fastjson.version}</version>
+			</dependency>
+
+			<!-- commons-lang -->
+			<dependency>
+				<groupId>commons-lang</groupId>
+				<artifactId>commons-lang</artifactId>
+				<version>${commons-lang.version}</version>
+			</dependency>
+
+			<!-- jackson -->
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-mapper-asl</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+
+			<!-- lombok -->
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

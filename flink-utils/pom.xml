@@ -10,7 +10,7 @@
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>flink-utils</artifactId>
+	<artifactId>flink-utils</artifactId> <!-- 工具模块 -->
 	<packaging>jar</packaging>
 	<version>1.0</version>
 
@@ -21,6 +21,40 @@
 			<version>1.0</version>
 			<scope>${jar.dpd.scope}</scope>
 		</dependency>
+
+		<!-- 此处引用父项目依赖 start -->
+
+		<!-- mysql -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+
+		<!-- fastjson -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+		</dependency>
+
+		<!-- commons-lang -->
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+		</dependency>
+
+		<!-- jackson -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+		</dependency>
+
+		<!-- lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+
+		<!-- 此处引用父项目依赖 end -->
 	</dependencies>
 
 	<build>

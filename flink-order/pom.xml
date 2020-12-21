@@ -10,10 +10,14 @@
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>flink-order</artifactId>
+	<artifactId>flink-order</artifactId> <!-- 业务模块 -->
 	<packaging>jar</packaging>
 	<version>1.0</version>
 
+	<!-- 正常打包方式 -->
+	<!-- 1. 安装flink-common到本地仓库，使用idea-runtime-dpd概要，第1次安装后，后面如果依赖无变动无需再次安装 -->
+	<!-- 2. 安装flink-utils到本地仓库，使用cluster-runtime-dpd概要 -->
+	<!-- 3. 打包本模块，使用cluster-runtime-dpd概要 -->
 	<dependencies>
 		<dependency>
 			<groupId>com.zoush</groupId>
@@ -24,7 +28,7 @@
 
 		<dependency>
 			<groupId>com.zoush</groupId>
-			<artifactId>flink-utils</artifactId>
+			<artifactId>flink-utils</artifactId> <!-- 打包 -->
 			<exclusions>
 				<exclusion>
 					<groupId>com.zoush</groupId>
@@ -32,6 +36,40 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+
+		<!-- 此处引用父项目依赖 start -->
+
+		<!-- mysql -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+
+		<!-- fastjson -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+		</dependency>
+
+		<!-- commons-lang -->
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+		</dependency>
+
+		<!-- jackson -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+		</dependency>
+
+		<!-- lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+
+		<!-- 此处引用父项目依赖 end -->
 	</dependencies>
 
 	<build>
