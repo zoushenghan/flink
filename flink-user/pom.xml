@@ -25,7 +25,7 @@
 		<dependency>
 			<groupId>com.zoush</groupId>
 			<artifactId>flink-utils</artifactId> <!-- 打包 -->
-			<exclusions>
+			<exclusions> <!-- 此处应排除某些jar包 -->
 				<exclusion>
 					<groupId>com.zoush</groupId>
 					<artifactId>flink-common</artifactId>
@@ -35,37 +35,11 @@
 
 		<!-- 此处引用父项目依赖 start -->
 
-		<!-- mysql -->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-		</dependency>
-
-		<!-- fastjson -->
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>fastjson</artifactId>
-		</dependency>
-
-		<!-- commons-lang -->
-		<dependency>
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
-		</dependency>
-
-		<!-- jackson -->
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
-		</dependency>
-
-		<!-- lombok -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-		</dependency>
-
 		<!-- 此处引用父项目依赖 end -->
+
+		<!-- 此处引用特定依赖 start -->
+
+		<!-- 此处引用特定依赖 end -->
 	</dependencies>
 
 	<build>

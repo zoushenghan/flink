@@ -42,7 +42,7 @@
 	<!-- 定义概要 -->
 	<profiles>
 		<profile>
-			<id>idea-runtime-dpd</id> <!-- jar包依赖范围 -->
+			<id>idea-dpd</id> <!-- jar包依赖范围 -->
 			<properties>
 				<jar.dpd.scope>compile</jar.dpd.scope>
 			</properties>
@@ -51,7 +51,7 @@
 			</activation>
 		</profile>
 		<profile>
-			<id>cluster-runtime-dpd</id> <!-- jar包依赖范围 -->
+			<id>cluster-dpd</id> <!-- jar包依赖范围 -->
 			<properties>
 				<jar.dpd.scope>provided</jar.dpd.scope> <!-- 由容器提供，不会被打包 -->
 			</properties>
